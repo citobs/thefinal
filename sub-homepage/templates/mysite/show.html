@@ -1,0 +1,33 @@
+
+{% load static %}
+
+<head>
+    {% block style%}
+
+    {% endblock %}
+</head>
+{% block content %}
+
+
+{% for list in postlist %}
+<ul class="no9">
+    <li>
+        순번:{{list.pk}}
+        작성자:{{ list.postname }}<br>
+        내용:{{ list.contents }}<br>
+        사진 :<img src="{{ list.mainphoto.url }}" alt="" height="600">
+        <a href="{% url 'mysite:show' %}">삭제하기</a>
+
+    </li>
+</ul>
+{% endfor %}
+<!-- 삭제 기능 추가-->
+<!-- <input type="button" class="btnDelete" , src=".html" value="삭제"> -->
+
+{% endblock %}
+
+
+
+
+
+</html>

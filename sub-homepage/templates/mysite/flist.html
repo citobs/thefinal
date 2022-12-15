@@ -1,0 +1,74 @@
+{% extends './base.html' %}
+{% load static %}
+
+<head>
+
+    {%block style%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {%endblock%}
+    <title>음식점전체리스트</title>
+</head>
+
+<body>
+    <!-- {% block content%}
+    <table>
+        <th>순번</th>
+        <th>감정</th>
+        <th>계절</th>
+        <th>1순위</th>
+        <th>2순위</th>
+        <th>3순위</th>
+        <th>4순위</th>
+        <th>5순위</th>
+
+
+        {% for i in fd %}
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.emot}}</td>
+            <td>{{i.sea}}</td>
+            <td>{{i.first}}</td>
+            <td>{{i.second}}</td>
+            <td>{{i.third}} </td>
+            <td>{{i.fourth}}</td>
+            <td>{{i.fifth}}</td>
+
+            {% endfor %}
+        </tr>
+
+    </table>
+    {% endblock%} -->
+    {% block content2 %}
+    <table>
+        <th>순번</th>
+        <th>감정</th>
+        <th>계절</th>
+        <th>1순위</th>
+        <th>2순위</th>
+        <th>3순위</th>
+        <th>4순위</th>
+        <th>5순위</th>
+
+
+        {% for i in mere %}
+        {% if i.menu == f1 %}
+    
+        <tr>
+            <td>{{i.menu}}</td>
+            <td>{{i.restaurant}}</td>
+            <td>{{i.sea}}</td>
+            <td>{{i.first}}</td>
+            <!-- <td>{{i.second}}</td>
+            <td>{{i.third}} </td>
+            <td>{{i.fourth}}</td>
+            <td>{{i.fifth}}</td> -->
+
+            {% endif %}
+            {% endfor %}
+        </tr>
+
+
+    </table>
+    {{f1}}
+    {% endblock%}
+</body>

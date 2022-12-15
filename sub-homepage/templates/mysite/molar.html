@@ -1,0 +1,79 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="'wrap">
+        <div class="intro_bg">
+            <div class="header">
+                <div class="searchArea">
+                    <form>
+                        <input type="search" placeholder="search">
+                        <span>검색</span>
+                    </form>
+                </div>
+                <ul class="nav">
+                    <li><a href="{% url 'mysite:base1' %}">home</a></li>
+                    <li><a href="{% url 'mysite:map' %}">전체음식점목록</a></li>
+                    <li><a href="{% url 'mysite:food_list' %}">표정분석페이지이동</a></li>
+                    <li><a href="{% url 'mysite:new_post' %}">이미지업로드</a></li>
+                    <li><a href="{% url 'mysite:food' %}">음식추천기록보기</a></li>
+                </ul>
+            </div>
+            <div class="intro_text">
+                <h1>표정분석을 통한 음식을 추천 받고 싶으신가요!?</h1>
+                <h4 class="contents1">저희 Six Sigma는 최고의 서비스 제공을 위해 최선을 다하겠습니다!</h4>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <ul class="amount">
+        <li>
+            <div>
+                <div class="contents1">방문자 수 </div>
+                <div class="result">{{ count }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">현재 음식추천 횟수</div>
+                <div class="result">{{ fcount }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">최종 분석 목표횟수</div>
+                <div class="result">100,000+{{count}}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">사진입력횟수</div>
+                <div class="result">{{spcount}}</div>
+            </div>
+        </li>
+    </ul>
+
+    <h1>감정을 읽을 수 없어요</h1>
+    <p>
+    <h2>현재 감정을 선택해주세요.</h2>
+    </p>
+    <form action="{% url 'mysite:food_list1' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="submit" name="angry" value="화남">
+        <input type="submit" name="happy" value="기쁨">
+        <input type="submit" name="sad" value="슬픔">
+    </form>
+
+    {{a}}

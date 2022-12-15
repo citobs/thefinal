@@ -1,0 +1,59 @@
+{% extends './base.html'%}
+{% load static %}
+
+<head>
+    {% block style %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% endblock %}
+</head>
+
+<body>
+    {% block content%}
+    <ul class="amount">
+        <li>
+            <div>
+                <div class="contents1">방문자 수 </div>
+                <div class="result">{{ count }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">현재 음식추천 횟수</div>
+                <div class="result">{{ fcount }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">최종 분석 목표횟수</div>
+                <div class="result">100,000+{{count}}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">사진입력횟수</div>
+                <div class="result">{{spcount}}</div>
+            </div>
+        </li>
+    </ul>
+    <div class="main_text0">
+        <div class="contents1">
+            오늘의 방문자 수는 <span style="font:italic bold 3em/3em Geogia, serif;color:red;"> {{count}} </span> 명 입니다<br>
+        </div>
+
+        <table class="t9">
+            <th>감정분류</th>
+            <th>생성날짜</th>
+            <th>음식종류</th>
+            {% for li in foodlist %}
+            <tr>
+                <td>{{li}}</td>
+                <td>{{li.created_at}}</td>
+                <td>{{ li.menu }}</td>
+                {% endfor %}
+            </tr>
+            <!-- 생성날짜:{{li.created_at}}, 음식검색 : {{ li.menu }}<br> -->
+        </table>
+
+
+        {% endblock %}
+</body>

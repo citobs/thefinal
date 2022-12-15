@@ -1,0 +1,73 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block style %}
+    {% endblock %}
+</head>
+
+<body>
+    <div class="'wrap">
+        <div class="intro_bg">
+            <div class="header">
+                <div class="searchArea">
+                    <form>
+                        <input type="search" placeholder="search">
+                        <span>검색</span>
+                    </form>
+                </div>
+                <ul class="nav">
+                    <li><a href="{% url 'mysite:base1' %}">home</a></li>
+                    <li><a href="{% url 'mysite:map' %}">전체음식점목록</a></li>
+                    <li><a href="{% url 'mysite:food_list' %}">표정분석페이지이동</a></li>
+                    <li><a href="{% url 'mysite:new_post' %}">이미지업로드</a></li>
+                    <li><a href="{% url 'mysite:food' %}">음식추천기록보기</a></li>
+                </ul>
+            </div>
+            <div class="intro_text">
+                <h1>표정분석을 통한 음식을 추천 받고 싶으신가요!?</h1>
+                <h4 class="contents1">저희 Six Sigma는 최고의 서비스 제공을 위해 최선을 다하겠습니다!</h4>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    {% block content %}
+    {% endblock%}
+    {% block content2 %}
+    {% endblock%}
+    {% block content3 %}
+    {% endblock%}
+    <div>
+        <div class="main_text2">
+            <ul>
+                <li>
+                    <div>
+                        <h1>CONTACT</h1>
+                    </div>
+                    <div>시그마 6에게 연락하고 싶으신가요!?</div>
+                    <div class="more2"><a href="./contatus.html">더 알아보기</a></div>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            <div><img src='{%static "./img/six.png"%}' width="100px" height="100px"></div>
+            <div>
+                CEO. 6시그마 <br>
+                Addr. 멀티캠퍼스 3팀 식스 시그마 Fax/Tel.010-0000-0000 <br>
+                02-000-0000 <br>
+                COPYRIGHT 2022.12. Six Sigma. ALL RIGHT RESERVED.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

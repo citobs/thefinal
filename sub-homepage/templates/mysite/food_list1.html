@@ -1,0 +1,138 @@
+{% extends './base.html'%}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    {%block style%}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {%endblock%}
+</head>
+
+<head>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+
+<body>
+    {%block content%}
+    <ul class="amount">
+        <li>
+            <div>
+                <div class="contents1">방문자 수 </div>
+                <div class="result">{{ count }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">현재 음식추천 횟수</div>
+                <div class="result">{{ fcount }}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">최종 분석 목표횟수</div>
+                <div class="result">100,000+{{count}}</div>
+            </div>
+        </li>
+        <li>
+            <div>
+                <div class="contents1">사진입력횟수</div>
+                <div class="result">{{spcount}}</div>
+            </div>
+        </li>
+    </ul>
+    <div class="main_text0">
+        <div class="contents1">
+            오늘의 방문자 수는 <span style="font:italic bold 3em/3em Geogia, serif;color:red;"> {{count}} </span> 명 입니다<br>
+            당신은 선택은 {{emo}} 감정이며, 감정이며 당신의 {{emo}} 감정과 현재의 계절 {{sea}}, 오늘의 날씨 {{wea}}를 고려했을때 아래의 메뉴와 음식점을
+            추천드립니다.<br>
+        </div>
+    </div>
+    <div class="no1">
+        <img src="/media/{{ arr.mainphoto }}" alt="700" height="600"><br>
+
+
+
+
+        <table>
+            <th>순위</th>
+            <th>추천메뉴</th>
+            <th>추천음식점</th>
+            <th>바로가기</th>
+
+            {% for f, d, e in folist %}
+            <tr>
+                <td>{{f}}순위</td>
+                <td>{{d}}</td>
+                <td>{{e}}</td>
+                <td>{% if e == "고투웍" %}
+                    <a href="{% url 'mysite:gotowork' %}"> {{e}}.</a><br>
+                    {% elif e == "구내식당" %}
+                    <a href="{% url 'mysite:gunae' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "돌배기" %}
+                    <a href="{% url 'mysite:dol' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "롤링파스타" %}
+                    <a href="{% url 'mysite:rol' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "리춘시장" %}
+                    <a href="{% url 'mysite:lee' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "막이오름" %}
+                    <a href="{% url 'mysite:mak' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "미정국수0410" %}
+                    <a href="{% url 'mysite:mij' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "백철판" %}
+                    <a href="{% url 'mysite:bac3' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "본가" %}
+                    <a href="{% url 'mysite:bon' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "분식9단" %}
+                    <a href="{% url 'mysite:bun' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "Back다방" %}
+                    <a href="{% url 'mysite:bac4' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "빽보이" %}
+                    <a href="{% url 'mysite:bac5' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "새마을식당" %}
+                    <a href="{% url 'mysite:sae' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "성성식당" %}
+                    <a href="{% url 'mysite:sun' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "역전우동" %}
+                    <a href="{% url 'mysite:yuk' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "연돈볼카츠" %}
+                    <a href="{% url 'mysite:yeo' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "백종원의 元祖쌈밥집" %}
+                    <a href="{% url 'mysite:one' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "인생설렁탕" %}
+                    <a href="{% url 'mysite:ins' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "한신포차" %}
+                    <a href="{% url 'mysite:han' %}"> {{e}} 입니다.</a><br>
+                    {% elif e == "홍콩반점" %}
+                    <a href="{% url 'mysite:hon' %}"> {{e}} 입니다.</a><br>
+                    {% else %} {{e}} 입니다.<br>
+                    {% endif %}
+                    {% endfor%}
+                </td>
+            </tr>
+        </table>
+    </div>
+    {%endblock%}
+
+</body>
+
+<!-- 다음 {{ d }} 메뉴를 추천드립니다.<br>
+구매하실 수 있는 음식점은 {{ e }} 입니다 -->
+
+
+
+<hr />
+
+{{final}}
+<hr />
+
+<br>{{ptlink}}
+<p>
+    <a href="{% url 'mysite:map' %}">음식점map</a>
+    <a href="{% url 'mysite:food_list' %}">이전페이지</a>
+
+    <!-- <a href="{% url 'mysite:map' %}">짬뽕</a> -->

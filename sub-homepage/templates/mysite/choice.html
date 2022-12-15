@@ -1,0 +1,49 @@
+{% extends './base.html' %}
+{% load static %}
+
+<head>
+
+</head>
+
+<body>
+    {% block content%}
+    <table>
+        <th>선택일자</th>
+        <th>음식명</th>
+        <th>음식점</th>
+        <th>감정상태</th>
+        <th>날씨</th>
+        <th>계절</th>
+        <th>댓글</th>
+
+        {% for i in f2 %}
+        <tr>
+            <td>{{i.cr_at}}</td>
+            <td>{{i.menu}}</td>
+            <td>{{i.res}}</td>
+            <td>{{i.emotion}}</td>
+            <td>{{i.weather}}</td>
+            <td>{{i.season}}</td>
+            <td>{{i.comment}}</td>
+
+
+
+
+        </tr>
+
+        {%endfor%}
+
+    </table>
+    <!-- 댓글달기 form -->
+    <form action="{% url 'mysite:finale' %}" method="GET" , enctype="multipart/form-data">
+        {%csrf_token%}
+        <input type="text" name="comment" placeholder="댓글을 입력하세요">
+
+        <input type="checkbox" name="anonymous" value="y">
+        <span style="font-size: 0.7em;">익명</span>
+
+        <input type="submit" value="comment">
+    </form>
+
+    {% endblock%}
+</body>
