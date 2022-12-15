@@ -8,6 +8,14 @@ the project final commit
 
 13:11 readme 대문 및 최종 커밋완료
 
+13:27 VGG모델 압축파일 facemodel폴더에 업로드 완료
+
+13:28 사용 법제작
+
+- VGG 모델을 사용할려면 3파일을 모두 다운받은 후 압축풀기 진행
+- mysite/view.py 안의 load_model(경로) 경로설정후에 runserver
+- 사진입력하면 됨. 끝
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/116532192/207770570-598907fe-0c10-4dfd-bc62-a802c53eccdf.gif">
   </p>
