@@ -12,7 +12,8 @@ the project final commit
 
 13:28 사용 법제작
 
-- VGG 모델을 사용할려면 3파일을 모두 다운받은 후 압축풀기 진행
+- VGG 모델을 사용할려면 facefoler의 압축된 3개의 파일을 모두 다운받은 후
+  압축풀기 진행
 - mysite/view.py 안의 load_model(경로) 경로설정후에 runserver
 - 사진입력하면 됨. 끝
 
