@@ -14,8 +14,10 @@ the project final commit
 
 - VGG 모델을 사용할려면 facefoler의 압축된 3개의 파일을 모두 다운받은 후
   압축풀기 진행
+- DB관련 : 마이그레이션 후에 DB menu_score_all에 data셋에 있는 menu_score_all
+  파일 DB에 임포트
 - mysite/view.py 안의 load_model(경로) 경로설정후에 runserver
-- 사진입력하면 됨. 끝
+- 웹페이지 뜨면 성공!
 
 <p align="center">
 <img src="https://user-images.githubusercontent.com/116532192/207770570-598907fe-0c10-4dfd-bc62-a802c53eccdf.gif">
