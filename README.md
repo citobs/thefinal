@@ -12,7 +12,7 @@ the project final commit
 
 13:44 사용 법제작
 
-- VGG 모델을 사용할려면 facefoler의 압축된 3개의 파일을 모두 다운받은 후
+- VGG 모델을 사용할려면 facmodel 폴더의 압축된 3개의 파일을 모두 다운받은 후
   압축풀기 진행
 - DB관련 : 마이그레이션 후에 DB menu_score_all에 data셋에 있는 menu_score_all
   파일 DB에 임포트
