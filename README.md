@@ -21,6 +21,8 @@ the project final commit
 
 am 12:02 서브홈페이지(디자인 다른것) 업로드 완료! - 2차 최종커밋 완료
 
+"최종오류수정 커밋 완료!"
+
 <p align="center">
 <img src="https://user-images.githubusercontent.com/116532192/207770570-598907fe-0c10-4dfd-bc62-a802c53eccdf.gif">
   </p>
