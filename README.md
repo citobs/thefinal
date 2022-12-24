@@ -8,7 +8,7 @@ the project final commit
 
 13:11 readme 대문 및 최종 커밋완료
 
-13:27 VGG모델 압축파일 facemodel폴더에 업로드 완료
+13:27 VGG모델 압축파일 facmodel폴더에 업로드 완료
 
 13:44 사용 법제작
 
@@ -16,7 +16,7 @@ the project final commit
   압축풀기 진행
 - DB관련 : 마이그레이션 후에 DB menu_score_all에 data셋에 있는 menu_score_all
   파일 DB에 임포트
-- mysite/view.py 안의 load_model(경로) 경로설정후에 runserver
+- mysite/view.py 안의 load_model(경로),file=glob.glob(f'미디어폴더상대경로/{ptlink}'), roi=(f'미디어폴더상대경로/{ptlink}') 설정후에 사용가능!
 - 웹페이지 뜨면 성공!
 
 am 12:02 서브홈페이지(디자인 다른것) 업로드 완료! - 2차 최종커밋 완료
