@@ -24,7 +24,7 @@ am 12:02 서브홈페이지(디자인 다른것) 업로드 완료! - 2차 최종
 의존성 패키지 주입 및 추출
 
     추출 : pip freeze > requirements.txt
-    추집 : pip install -r requirements.txt
+    주입 : pip install -r requirements.txt
 
 
 "최종오류수정 커밋 완료!"
